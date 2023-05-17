@@ -5,12 +5,12 @@ nixPkgs = ['python39', 'gcc']
 
 
 [phases.install]
-cmds = ['sudo python3 -V']
+cmds = ['python -V']
 
 [phases.build]
 dependsOn = ['setup']
-cmds = ['python3 -m venv venv', 'source venv/bin/activate', 'python3 -m pip install -r requirements.txt']
+cmds = ['python -m venv venv', 'source venv/bin/activate', 'python -m pip install -r requirements.txt']
 
 
 [start]
-cmd = 'python3 -m uvicorn test:app --reload --host 0.0.0.0'
+cmd = 'python -m uvicorn test:app --reload --host 0.0.0.0'
