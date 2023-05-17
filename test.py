@@ -3,7 +3,16 @@ from typing import List, Tuple
 import test
 import json 
 from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
+
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows CORS for this specific origin
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all methods
+    allow_headers=["*"],  # Allows all headers
+)
 import uvicorn
 
 @app.post("/")
