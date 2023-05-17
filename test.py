@@ -17,7 +17,8 @@ import uvicorn
 
 @app.post("/")
 async def get_results(request: Request):
-  body = await request.json()
+  body = (await request.json())["data"]
+  print(body)
 
   @llm
   def fuzzy_classifier(input: str, classifier_instructions: str, example_inputs: List[str] = [], example_labels: List[bool] = [], chain_of_thought: str = "") -> bool:
