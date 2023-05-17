@@ -1,7 +1,7 @@
 # nixpacks.toml
 
 [phases.setup]
-nixPkgs = ['python310', 'gcc']
+nixPkgs = ['python311', 'gcc']
 
 
 [phases.install]
