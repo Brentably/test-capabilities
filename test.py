@@ -4,6 +4,7 @@ import test
 import json 
 from fastapi import FastAPI, Request
 app = FastAPI()
+import uvicorn
 
 @app.post("/")
 async def get_results(request: Request):
