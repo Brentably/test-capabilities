@@ -1,0 +1,15 @@
+{
+
+  "cases": [
+  ["Hey everyone, can anyone recommend a good book on Python programming?", false],
+  ["I totally agree with you, your viewpoint is quite insightful.", false],
+  ["That's the stupidest thing I've ever heard. Are you always this clueless?", true],
+  ["Your post was really helpful, thanks for sharing!", false],
+  ["I think your argument is fundamentally flawed and you don't seem to understand the topic.", true],
+  ["Your ignorance is astounding. Do you even know what you're talking about?", true],
+  ["I appreciate the advice, it's really helpful.", false],
+  ["That's a ridiculous argument. You must be an idiot.", true],
+  ["Thanks for the explanation, it clarified a lot of my doubts.", false],
+  ["I can't believe how dumb some people are on this forum.", true],
+  ["You clearly have no idea what you're talking about. How pathetic.", true]
+]}
