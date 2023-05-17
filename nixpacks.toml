@@ -9,7 +9,7 @@ cmds = ['python3 -V']
 
 [phases.build]
 dependsOn = ['setup']
-cmds = ['python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt', 'pip install uvicorn', 'pip show uvicorn']
+cmds = ['python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt', 'python3 -m pip install uvicorn', 'python3 -m pip show uvicorn']
 
 
 [start]
