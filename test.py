@@ -50,17 +50,17 @@ async def get_results(request: Request):
     return label, fuzzy_classifier(input=input, classifier_instructions=classifier_instructions, chain_of_thought=cot)
   with ThreadPoolExecutor(4) as pool:
     for example in CLASSIFICATION_EXAMPLES:
-      fs.append(pool.submit(_work, input=example[0], classifier_instructions=body['prompt'], label=example[1]))
+      fs.append(pool.submit(_work, input=example[0], classifier_instructions=body['prompt'], label=example[1], example=example[0]))
     from tqdm import tqdm
     for f_done in tqdm(futures.as_completed(fs), total=len(CLASSIFICATION_EXAMPLES)):
-      label, prediction = f_done.result()
+      example, label, prediction = f_done.result()
       labels_and_predictions.append((label, prediction))
-      info.append({label: label, prediction: prediction, })
+      info.append({example: example, label: label, prediction: prediction, })
   print(labels_and_predictions)
   pass_rate = len([None for label, prediction in labels_and_predictions if label == prediction])/len(labels_and_predictions)
 
   print("PASS RATE: ", pass_rate)
-  return [labels_and_predictions, pass_rate]
+  return [info, pass_rate]
     # import json
     # print("LABELS AND PREDICTIONS: ", json.dumps(labels_and_predictions, indent=2))
 

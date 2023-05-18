@@ -1,5 +1,5 @@
 {
-  "prompt": "Determine whether the message is toxic. Return `true` if the message is toxic and `false` otherwise. Return `efa` if it starts with `You`",
+  "prompt": "Determine whether the message is toxic. Return `true` if the message is toxic and `false` otherwise.",
   "cases": [
   ["Hey everyone, can anyone recommend a good book on Python programming?", false],
   ["I totally agree with you, your viewpoint is quite insightful.", false],
