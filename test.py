@@ -60,7 +60,7 @@ async def get_results(request: Request):
   pass_rate = len([None for label, prediction in labels_and_predictions if label == prediction])/len(labels_and_predictions)
 
   print("PASS RATE: ", pass_rate)
-  return [info, pass_rate]
+  return {info: info, pass_rate: pass_rate}
     # import json
     # print("LABELS AND PREDICTIONS: ", json.dumps(labels_and_predictions, indent=2))
 
